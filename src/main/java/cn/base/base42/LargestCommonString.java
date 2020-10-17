@@ -10,9 +10,8 @@ public class LargestCommonString {
         int[][] res = new int[m][n];
         // 初始化第 0 行
         for (int i = 0; i < n; i++) {
-            if (s.charAt(0) == t.charAt(i))
-                res[0][i] = 1;
-            else if (i != 0) res[0][i] = res[0][i + 1];
+            if (s.charAt(0) == t.charAt(i)) res[0][i] = 1;
+            else if (i != 0) res[0][i] = res[0][i - 1];
             else res[0][i] = 0;
         }
         // 初始化第 0 列
@@ -22,8 +21,8 @@ public class LargestCommonString {
             else res[i][0] = 0;
         }
         // 动态规划填表过程
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
                 if (s.charAt(i) != t.charAt(j)) {
                     res[i][j] = Math.max(Math.max(res[i - 1][j], res[i][j - 1]), res[i - 1][j - 1]);
                 } else {

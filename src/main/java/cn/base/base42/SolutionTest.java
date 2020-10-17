@@ -7,5 +7,7 @@ public class SolutionTest {
 
         System.out.println(new LevenshteinDistance().getLevenshteinDistance(s, t));
         System.out.println(new LevenshteinDistance().getLevenshteinDistanceDP(s, t));
+
+        System.out.println(new LargestCommonString().getLargestCommonString(s, t));
     }
 }
