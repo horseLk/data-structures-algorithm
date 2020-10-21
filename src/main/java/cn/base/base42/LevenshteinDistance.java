@@ -11,11 +11,17 @@ public class LevenshteinDistance {
         int m = s.length();
         int n = t.length();
         int[][] res = new int[m][n];
+        // 初始化第一列
         for (int i = 0; i < m; i++) {
-            res[i][0] = i;
+            if (s.charAt(i) == t.charAt(0)) res[i][0] = i;
+            else if (i != 0) res[i][0] = res[i - 1][0] + 1;
+            else res[i][0] = 1;
         }
+        // 初始化第一行
         for (int i = 0; i < n; i++) {
-            res[0][i] = i;
+            if (s.charAt(0) == t.charAt(i)) res[0][i] = i;
+            else if (i != 0) res[0][i] = res[0][i - 1] + 1;
+            else res[0][i] = 1;
         }
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
