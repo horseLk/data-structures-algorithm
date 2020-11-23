@@ -10,8 +10,9 @@ public class SolutionTest {
 
 //        new InsertSort().insertSort(nums);
 
-        new SelectSort().selectSort(nums);
+//        new SelectSort().selectSort(nums);
 
+        new InsertSort().insertSort(nums);
         System.out.println(Arrays.toString(nums));
 
     }

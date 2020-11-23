@@ -17,4 +17,20 @@ public class InsertSort {
             nums[j] = cur;
         }
     }
+
+    public void insertSort2(int[] nums) {
+        int n = nums.length;
+        for (int i = 0; i < n - 1; i++) {
+            int cur = nums[i + 1];
+            int j = i;
+            while (j >= 0) {
+                if (nums[j] > cur) {
+                    nums[j + 1] = nums[j];
+                } else {
+                    nums[j + 1] = cur;
+                }
+                j--;
+            }
+        }
+    }
 }

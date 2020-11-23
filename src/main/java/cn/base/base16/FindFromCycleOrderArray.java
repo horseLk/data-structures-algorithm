@@ -22,7 +22,7 @@ public class FindFromCycleOrderArray {
         if (start > end) return -1;
         int mid = start + (end - start) / 2;
         if (nums[mid] == target) return mid;
-        else if (nums[mid] > nums[start]) {
+        else if (nums[mid] >= nums[start]) {
             int index = binaryFind(nums, start, end, target);
             if (index != -1) return index;
             else return findInCycle(nums, mid + 1, end, target);
