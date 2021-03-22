@@ -1,5 +1,7 @@
 package cn.base.base11;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public void quickSort(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
@@ -17,7 +19,7 @@ public class QuickSort {
             if (s < t) {
                 nums[s] = nums[t];
             }
-            while (s < t && nums[s] < tk) {
+            while (s < t && nums[s] <= tk) {
                 s++;
             }
             if (s < t) {
